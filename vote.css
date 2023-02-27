@@ -1,0 +1,27 @@
+.vote 
+{
+    border: 0;
+    transition-duration: 0.2s;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    text-align: center;
+    color: #fff;
+    border-radius: 30px;
+    background-color: #5865F2;
+    background-size: cover;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 7px 7px 20px hsla(0, 0%, 100%, 0.3), inset -8px -8px 24px hsla(0, 0%, 0%, 0.45), 4px 4px 24px hsla(0, 0%, 0%, 0.45);
+    line-height: 75px;
+    font-size: 40px;
+    width: 20%;
+    height: 100px;
+    text-shadow: 4px 4px 24px hsla(0, 0%, 0%, 0.45);
+}
+.vote:hover
+{
+    box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
+}
+.vote:active
+{
+    box-shadow: inset 14px 14px 20px hsla(0, 0%, 100%, 0.2), inset -16px -16px 24px hsla(0, 0%, 0%, 0.35);
+}
