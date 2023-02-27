@@ -1,0 +1,243 @@
+@font-face 
+{
+    font-family: 'uni sans heavy';
+    src: url(./Logo/Uni\ Sans\ Heavy.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face 
+{
+    font-family: 'uni sans bold';
+    src: url(./Logo/Uni\ Sans\ Bold.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face 
+{
+    font-family: 'uni sans regular';
+    src: url(./Logo/Uni\ Sans\ Regular.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face 
+{
+    font-family: 'uni sans book';
+    src: url(./Logo/Uni\ Sans\ Heavy.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1
+{
+    font-family:uni sans heavy, sans-serif;
+    font-size:75px;
+    background: linear-gradient(45deg, #5865F2 10%, #ffffff 75%, #5865F2 90%);
+    filter: drop-shadow(2px 2px 0.75rem rgba(0, 0, 0, 0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2
+{
+    font-family:uni sans bold, sans-serif;
+    font-size:50px;
+    background: -webkit-linear-gradient(#5865F2, #a7aeff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0.75rem rgba(0, 0, 0, 0.8));
+}
+h3
+{
+    font-family:uni sans regular, sans-serif;
+    font-size:25px;
+    background-color: #a2aaff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 1));
+}
+h4
+{
+    font-family:uni sans book, sans-serif;
+    font-size:17;
+    background-color: #a2aaff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h5
+{
+    font-family:uni sans book, sans-serif;
+    font-size:10px;
+    background-color: #a2aaff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input
+{
+    border: 0;
+    transition-duration: 0.2s;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+    background-color: #5865F2;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 7px 7px 10px hsla(0, 0%, 100%, 0.3), inset -8px -8px 12px hsla(0, 0%, 0%, 0.45);
+    display: block
+}
+input:hover{
+    box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
+}
+
+ul
+{
+    background-color: #00000000;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li a:hover
+{
+    box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
+}
+ul li a
+{
+    text-decoration: none;
+    text-underline-offset: none;
+    text-underline-position: unset;
+    border: 0;
+    transition-duration: 0.2s;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #5865F2;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 10px 10px 15px hsla(0, 0%, 100%, 0.3), inset -10px -10px 15px hsla(0, 0%, 0%, 0.45);
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li a:hover:not(.header) 
+{
+    box-shadow: inset 15px 15px 23px hsla(0, 0%, 100%, 0.3), inset -15px -15px 23px hsla(0, 0%, 0%, 0.45);
+}
+
+.styled 
+{
+    border: 0;
+    transition-duration: 0.2s;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+    background-color: #5865F2;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 7px 7px 10px hsla(0, 0%, 100%, 0.3), inset -8px -8px 12px hsla(0, 0%, 0%, 0.45);
+}
+.styled:hover
+{
+    box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
+}
+.styled:active
+{
+    box-shadow: inset 14px 14px 20px hsla(0, 0%, 100%, 0.2), inset -16px -16px 24px hsla(0, 0%, 0%, 0.35);
+}
+
+body
+{
+    background: linear-gradient(90deg, #202348 10%, #1b2057 60%, #5865F2 90%);
+    width: 90vw;
+}
+
+#menue
+{
+    position:absolute;
+    background: linear-gradient(170deg, hsl(0, 0%, 0%) 10%, #5865F2 60%, #b8beff 90%);
+    height: 200px;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    bottom: 0px;
+}
+.nav-up
+{
+    top: -75px;
+}
+
+#name-connect
+{
+    transition: width 1.8s font-size 3s;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    right: 2%;
+    top: 15px;
+    text-align: start;
+    font-size: 0px;
+    background-color: #b8beff;
+
+    font-family:uni sans bold, sans-serif;
+    font-size:50px;
+    background: -webkit-linear-gradient(#5865F2, #a7aeff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0.75rem rgba(0, 0, 0, 0.8));
+}
+#connect
+{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    right: 2%;
+    top: 15px;
+    text-align: center;
+}
+.connect 
+{
+    border: 0;
+    transition-duration: 0.2s;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50px;
+    background-color: #5865F2;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 7px 7px 10px hsla(0, 0%, 100%, 0.3), inset -8px -8px 12px hsla(0, 0%, 0%, 0.45);
+}
+.connect:hover
+{
+    box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
+}
+.connect:active
+{
+    box-shadow: inset 14px 14px 20px hsla(0, 0%, 100%, 0.2), inset -16px -16px 24px hsla(0, 0%, 0%, 0.35);
+}
+#logo
+{
+    position: absolute;
+    left: 2%;
+    top: 10px;
+    height : 60px;
+    -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+#goButton
+{
+    position: absolute;
+    bottom: 15px;
+    width: 12%;
+    height: 55px;
+}

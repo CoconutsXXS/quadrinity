@@ -1,0 +1,15 @@
+#intro-paragraphe
+{
+    position : absolute;
+    left: 2%;
+    width: 63%;
+    top: 165px;
+}
+#discord-widget
+{
+    position : absolute;
+    right : 2%;
+    width : 30%;
+    height : 85%;
+    top: 215px;
+}

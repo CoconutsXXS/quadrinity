@@ -1,0 +1,35 @@
+#intro-paragraphe
+{
+    position : absolute;
+    left: 2%;
+    width: 63%;
+    top: 165px;
+}
+
+#recomanded
+{
+    position:absolute;
+    background: linear-gradient(180deg, hsl(0, 0%, 0%) 0%, #1d214a 100%);;
+    height: 400px;
+    width: 159.6%;
+    left: -4%;
+}
+
+.productionlines { 
+    opacity: 1;
+    display: inline-block;
+    cursor: pointer;
+
+    transition: all 0.2s;
+} 
+.productionlines:hover{ 
+    filter: drop-shadow(2px 2px 1.5rem rgba(0, 0, 0, 0.75));
+}
+.productionlines .desc{
+    opacity: 0;
+
+    transition: all 0.5s;
+}
+.productionlines:hover .desc{
+    opacity: 1;
+}
