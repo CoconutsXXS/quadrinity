@@ -1,3 +1,3 @@
 title: home
 layout: template
-filename: home.md
+filename: home
