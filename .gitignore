@@ -1,0 +1,7 @@
+node_modules/
+old/
+3D/
+.vscode/
+myapp/
+*.blend
+*.blend1

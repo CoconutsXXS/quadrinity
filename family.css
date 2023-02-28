@@ -1,0 +1,33 @@
+.wumpus-selection
+{ 
+    opacity: 1;
+    display: inline-block;
+    cursor: pointer;
+
+    transition: all 0.2s;
+    filter: drop-shadow(2px 2px 1.5rem rgba(0, 0, 0, 0.75));
+} 
+
+#wumpus:hover{ filter: drop-shadow(2px 2px 3rem #5865F2); }
+#wumpa:hover{ filter: drop-shadow(2px 2px 3rem #FEE75C); }
+#wumpos:hover{ filter: drop-shadow(2px 2px 3rem #57F287); }
+#wumpinne:hover{ filter: drop-shadow(2px 2px 3rem #EB459E); }
+
+.text-selection
+{
+    transition: all 0.2s;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    background: linear-gradient(#5865F2, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0.75rem rgba(0, 0, 0, 0.8));
+    text-align:start;
+    font-size:40px;
+}
+.text-selection:hover
+{
+    font-size:55px;
+    text-align: center;
+}

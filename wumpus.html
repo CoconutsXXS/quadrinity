@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="discord.css">
+
+    <!-- Titre -->
+    <title>Quadrinity</title>
+    <!-- Logo d'onglet -->
+    <link rel="shortcut icon" href="family/Wumpus.png">
+
+    <script>
+        import {Client,GatewayIntentBits} from "discord.js";
+        function createMessage(avatarUrl, username, date, content)
+        {
+            const messages = document.getElementById('all-messages');
+            const template = document.getElementById("template");
+            const clone = template.cloneNode(true);
+
+            clone.children[0].src = avatarUrl;
+            clone.children[1].innerHTML = username.bold();
+            clone.children[2].textContent = date.toLocaleDateString("fr");
+            clone.children[3].textContent = content;
+            messages.appendChild(clone);
+        }
+    </script>
+</head>
+
+<body id="all-messages">
+    <div class="message" id="template">
+        <img id="icon" class="icon" src="https://cdn.discordapp.com/avatars/747403159864868864/fd5538290cd63e7715b3668ac154b467.webp?size=160" aria-hidden="true" alt=" "></img>
+        <h3 id="pseudo" class="pseudo"><b>Coconuts XXS</b></h3>
+        <time id="time" class="time" aria-label="Aujourd’hui à 13:53" datetime="2023-02-28T12:53:43.530Z">Aujourd’hui à 13:53</time>
+        <div id="content" class="content">Bonjour, je suis Coconuts XXS !</div>
+    </div>
+
+    <script>
+        window.onload = function()
+        {
+            const client = new Client
+            ({
+                intents:
+                [
+                    GatewayIntentBits.GuildMessages,
+                    GatewayIntentBits.GuildMembers,
+                    GatewayIntentBits.MessageContent,
+                    GatewayIntentBits.GuildMessageTyping,
+                    GatewayIntentBits.GuildMessageReactions,
+                    GatewayIntentBits.GuildWebhooks
+                ]
+            });
+
+            client.login("MTA0MTM1OTU1ODkzNDc5MDIxNQ.G5Q72j.3fh4aJjUjj8MoEz7-RzMcqfbuynsMv7-H-hpN8");
+        };
+        document.addEventListener("DOMContentLoaded", function()
+        {
+            client.on(Events.MessageCreate, (message) =>
+            {
+                if(message.channel.id != "1042422997681721354"){return;}
+                createMessage(message.author.avatarURL(), message.author.username, message.createdAt, message.content);
+            });
+        });
+    </script>
+</body>
+
+<div id="input" style="position: fixed; margin-bottom: 24px; padding-right: 16px; padding-left: 16px; padding-top: -8px;">
+    <input id="message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center; width: 90%;"></input>
+
+    <button style="position: fixed; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
+        <img style="width: 24px; height: 24px;" id="upload" src="discord/upload-big.png"/>
+    </button>
+
+    <script>
+        var input = document.getElementById("message-input");
+
+        input.addEventListener("keypress", async function(event) 
+        {
+            if(event.key === "Enter" && input.value.split("").length > 0)
+            {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://canary.discord.com/api/webhooks/1077642220674498630/mOimbQYKmWbicB2dYgaafVDPrAki_lrd48HLK8KlCXu3sIjP8iXv5NxWxSrit0MtR3J1");
+                request.setRequestHeader('Content-type', 'application/json');
+
+                const params =
+                {
+                    username: "Wumpus",
+                    avatar_url: "https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png",
+                    content: input.value
+                }
+                input.disabled = true;
+                await request.send(JSON.stringify(params));
+
+                createMessage("https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png", "Wumpus", new Date(), input.value);
+
+                input.value = "";
+                input.disabled = false;
+            }
+        });
+    </script>
+</div>
+</html>

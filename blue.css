@@ -85,7 +85,9 @@ input
     background-color: #5865F2;
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 7px 7px 10px hsla(0, 0%, 100%, 0.3), inset -8px -8px 12px hsla(0, 0%, 0%, 0.45);
-    display: block
+    display: block;
+    border: 0;
+    outline: none;
 }
 input:hover{
     box-shadow: inset 11px 11px 15px hsla(0, 0%, 100%, 0.3), inset -12px -12px 18px hsla(0, 0%, 0%, 0.45);
