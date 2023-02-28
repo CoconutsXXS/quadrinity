@@ -7,14 +7,14 @@
 }
 @font-face 
 {
-    font-family: 'uni sans extra bold';
+    font-family: 'uni sans extra';
     src: url(discord/gg_sans_Extrabold.tff);
     font-weight: normal;
     font-style: normal;
 }
 h1
 {
-    font-family:uni sans extra bold, sans-serif;
+    font-family:uni sans extra, sans-serif;
     font-size:32px;
     color: #ffffff;
 }
