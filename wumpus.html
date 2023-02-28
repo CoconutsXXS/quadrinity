@@ -37,31 +37,7 @@
     </div>
 
     <script>
-        window.onload = function()
-        {
-            const client = new Client
-            ({
-                intents:
-                [
-                    GatewayIntentBits.GuildMessages,
-                    GatewayIntentBits.GuildMembers,
-                    GatewayIntentBits.MessageContent,
-                    GatewayIntentBits.GuildMessageTyping,
-                    GatewayIntentBits.GuildMessageReactions,
-                    GatewayIntentBits.GuildWebhooks
-                ]
-            });
-
-            client.login("MTA0MTM1OTU1ODkzNDc5MDIxNQ.G5Q72j.3fh4aJjUjj8MoEz7-RzMcqfbuynsMv7-H-hpN8");
-        };
-        document.addEventListener("DOMContentLoaded", function()
-        {
-            client.on(Events.MessageCreate, (message) =>
-            {
-                if(message.channel.id != "1042422997681721354"){return;}
-                createMessage(message.author.avatarURL(), message.author.username, message.createdAt, message.content);
-            });
-        });
+        
     </script>
 </body>
 
