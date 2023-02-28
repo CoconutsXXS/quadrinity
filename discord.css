@@ -1,14 +1,14 @@
 @font-face 
 {
     font-family: 'uni sans regular';
-    src: url(discord/gg_sans_Normal.ttf);
+    src: url(./discord/gg_sans_Normal.ttf);
     font-weight: normal;
     font-style: normal;
 }
 @font-face 
 {
     font-family: 'uni sans extra bold';
-    src: url(discord/gg_sans_Extrabold.tff);
+    src: url(./discord/gg_sans_Extrabold.tff);
     font-weight: normal;
     font-style: normal;
 }
@@ -54,7 +54,7 @@ input
     border-radius: 500px;
     border: 0;
     outline: none;
-    -webkit-background-clip: url(discord/upload-big.png) alpha;
+    -webkit-background-clip: url(./discord/upload-big.png) alpha;
     -webkit-text-fill-color: transparent;
     -webkit-mask-image: alpha;
 }
