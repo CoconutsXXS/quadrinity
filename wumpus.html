@@ -42,16 +42,16 @@
 </ol>
 
 <div id="message-input" style="position: fixed; margin-bottom: 24px; padding-right: 16px; padding-left: 50px; padding-top: -8px;">
-    <input type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center; width: 87.5%;"></input>
+    <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center; width: 87.5%;"></input>
 
-    <button style="position: fixed; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
+    <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
         <img style="width: 24px; height: 24px;" id="upload" src="discord/upload-big.png"/>
     </button>
 
     <button onmouseover="emoteOver()" onmouseleave="emoteLeave()" style=" position: fixed; border: #ffffff00; background-color: #ffffff00; right: 65px; padding-right: 14px; bottom: 65px; text-align: center; width: 22px; height: 22px; display: block;" id="emote-button">
         <div style="background-position-x: 0px; background-position-y: 0px; background-size: 242px 110px; transform: scale(1); filter: grayscale(100%);" id="emote"></div></button>
     <script>
-        var input = document.getElementById("message-input");
+        var input = document.getElementById("text-message-input");
         input.addEventListener("keyup", async function(event) 
         {
             console.log(input.value);
