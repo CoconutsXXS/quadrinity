@@ -5,10 +5,23 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face 
+{
+    font-family: 'uni sans extra bold';
+    src: url(discord/gg_sans_Extrabold.tff);
+    font-weight: normal;
+    font-style: normal;
+}
+h1
+{
+    font-family:uni sans extra bold, sans-serif;
+    font-size:32px;
+    color: #ffffff;
+}
 h3
 {
     font-family:uni sans regular, sans-serif;
-    font-size:25px;
+    font-size:16px;
 }
 
 body
@@ -52,14 +65,30 @@ input
     left: 16px;
 }
 
+#all-messages
+{
+    list-style: none;
+    height: 70%;
+    bottom: 100px;
+    border-collapse: collapse;
+    position: absolute;
+    display: block;
+    width: calc(100% - 48px);
+    vertical-align: bottom;
+    overflow-x:hidden; 
+    overflow-y:scroll;
+}
 .message
 {
     margin-left: 24px;
-    margin-top: 0px;
-    padding: 0;
-    display:block;
-    line-height:100%;
+    margin-right: 24px;
+    position: relative;
+    padding: 0px;
+    display: inline-block;
+    line-height: 100%;
     font-family: uni sans regular, sans-serif;
+    align-self: flex-end;
+    width: 100%;
 }
 .icon
 {
@@ -124,4 +153,37 @@ input
     background-color: #5865F2;
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 7px 7px 10px hsla(0, 0%, 100%, 0.3), inset -8px -8px 12px hsla(0, 0%, 0%, 0.45);
+}
+#emote
+{
+    transition: all 0.2s ease, background-position 0s;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(discord/emotes.png);
+    background-repeat: no-repeat;
+
+    background-size: 242px 110px;
+    transform: scale(1);
+    filter: grayscale(100%);
+
+    -webkit-background-clip: url(discord/emotes.png);
+    -webkit-mask-image: transparent;
+}
+#emote:hover{ filter: grayscale(0%); }
+#icon-start
+{
+    width: 68px;
+    height: 68px;
+    position: relative;
+    left: 18px;
+    margin-top: 16px;
+    border-radius: 50%;
+    background-color: #41434a;
+    background-image: url(discord/channel.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
