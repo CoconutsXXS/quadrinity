@@ -97,7 +97,7 @@ input
     -webkit-text-fill-color: transparent;
     -webkit-mask-image: alpha;
     transition: 0.1s;
-    filter: brightness(1);
+    filter: brightness(0.9);
 }
 #upload:hover
 {
