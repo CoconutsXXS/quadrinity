@@ -57,6 +57,7 @@
 
 <div id="message-input" style="position: fixed; margin-bottom: 24px; padding-right: 16px; padding-left: 50px; padding-top: -8px;">
     <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center; width: 87.5%;"></input>
+    <div id="text-message-result" style="position: fixed; bottom: 50px; text-align: center; width: auto"></div>
 
 
     <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
@@ -81,9 +82,8 @@
 
     <script>
         var input = document.getElementById("text-message-input");
-        input.addEventListener("keyup", async function(event) 
+        input.addEventListener("keypress", async function(event) 
         {
-            console.log(input.value);
             if(event.key === "Enter" && input.value.split("").length > 0)
             {
                 const request = new XMLHttpRequest();
@@ -104,20 +104,19 @@
                 input.value = "";
                 input.disabled = false;
             }
-            else
+        });
+        input.addEventListener("input", function()
+        {
+            var text = input.value.split(" ");
+            for (var i = 0; i < text.length; i++)
             {
-                var text = input.value.split(" ");
-                for (var i = 0; i < text.length; i++)
+                if (text[i].startsWith("@"))
                 {
-                    if (text[i].startsWith("@"))
-                    {
-                        console.log("Mention détectée !")
-                        text[i] = '<span class="mention">' + text[i] + '</span>';
-                    }
+                    console.log("Mention détectée !")
+                    text[i] = '<span class="mention">' + text[i] + '</span>';
                 }
-                input.innerHTML = text.join(" ");
-                console.log(input.innerHTML);
             }
+            document.getElementById("text-message-result").innerHTML = text.join(" ");
         });
     </script>
     <script>

@@ -62,8 +62,33 @@ input
     border: 0;
     outline: none;
 }
+#text-message-result
+{
+    font-family:uni sans extra, sans-serif;
+    font-size:16px;
+    color: #ffffff;
+    padding-left: 50px;
+    width: 1.25rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 50vh;
+    backface-visibility:hidden;
+    scrollbar-width: none;
+    line-height: 2.5;
+    font-size: 20px;
+    text-align: start !important; 
+    color: rgb(224, 225, 229);
+    border-radius: 8px;
+    background-color: #383a40;
+    display: block;
+    border: 0;
+    outline: none;
+    pointer-events: none;
+    z-index: 1;
+}
 #upload
 {
+    z-index: 2;
     background-color: #ffffff00;
     border-radius: 500px;
     border: 0;
@@ -81,6 +106,7 @@ input
 
 #sticker
 {
+    z-index: 2;
     background-color: #ffffff00;
     border-radius: 500px;
     border: 0;
@@ -99,6 +125,7 @@ input
 
 #gif
 {
+    z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
     border: 0;
@@ -117,6 +144,7 @@ input
 
 #gift
 {
+    z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
     border: 0;
@@ -248,6 +276,7 @@ input
 }
 #emote
 {
+    z-index: 2;
     transition: all 0.2s ease, background-position 0s;
     left: 0px;
     top: 0px;
