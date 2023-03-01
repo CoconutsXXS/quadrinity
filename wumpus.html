@@ -28,6 +28,7 @@
 </head>
 
 <body onload="endLoad()">
+
 <script>
     async function endLoad()
     {
@@ -36,7 +37,7 @@
         {
             console.log("Destroy loading...")
             document.getElementById("loading").remove();
-        }, 2000)
+        }, 0000)
     }
 </script>
 
@@ -50,19 +51,34 @@
         <img id="icon" class="icon" src="https://cdn.discordapp.com/avatars/747403159864868864/fd5538290cd63e7715b3668ac154b467.webp?size=160" aria-hidden="true" alt=" "></img>
         <h3 id="pseudo" class="pseudo"><b>Coconuts XXS</b></h3>
         <time id="time" class="time" aria-label="Aujourd’hui à 13:53" datetime="2023-02-28T12:53:43.530Z">Aujourd’hui à 13:53</time>
-        <div id="content" class="content">Bonjour, je suis Coconuts XXS !</div>
+        <div id="content" class="content">Bonjour, je suis <mark class="mention">@Coconuts XXS</mark> !</div>
     </li>
 </ol>
 
 <div id="message-input" style="position: fixed; margin-bottom: 24px; padding-right: 16px; padding-left: 50px; padding-top: -8px;">
     <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center; width: 87.5%;"></input>
 
+
     <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
         <img style="width: 24px; height: 24px;" id="upload" src="discord/upload-big.png"/>
     </button>
 
+    <button id="sticker" style="position: fixed; font-size: 16px; padding-right: 14px; bottom: 72.5px; width: 18px; height: 18px;">
+        <img style="width: 28px; height: 28px;" id="sticker" src="discord/sticker.png"/>
+    </button>
+
+    <button id="gif" style="position: fixed; font-size: 16px; padding-right: 14px; bottom: 71px; width: 18px; height: 18px;">
+        <img style="width: 26px; height: 26px;" id="gif" src="discord/gif.png"/>
+    </button>
+
+    <button id="gift" style="position: fixed; font-size: 16px; padding-right: 14px; bottom: 71px; width: 18px; height: 18px;">
+        <img style="width: 26px; height: 26px;" id="gift" src="discord/gift.png"/>
+    </button>
+
+
     <button onmouseover="emoteOver()" onmouseleave="emoteLeave()" style=" position: fixed; border: #ffffff00; background-color: #ffffff00; right: 65px; padding-right: 14px; bottom: 65px; text-align: center; width: 22px; height: 22px; display: block;" id="emote-button">
-        <div style="background-position-x: 0px; background-position-y: 0px; background-size: 242px 110px; transform: scale(1); filter: grayscale(100%);" id="emote"></div></button>
+    <div style="background-position-x: 0px; background-position-y: 0px; background-size: 242px 110px; transform: scale(1); filter: grayscale(100%);" id="emote"></div></button>
+
     <script>
         var input = document.getElementById("text-message-input");
         input.addEventListener("keyup", async function(event) 
@@ -87,6 +103,18 @@
 
                 input.value = "";
                 input.disabled = false;
+            }
+            else
+            {
+                var index = 0;
+                text.forEach(element => 
+                {
+                    if(element.startsWith("@"))
+                    {
+                        input.innerHTML = input.innerHTML.replace(element, '<span class="mention">' + element + "</span>");
+                    }
+                    index++;
+                });
             }
         });
     </script>
