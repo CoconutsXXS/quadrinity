@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="discord/wumpus.png">
 
     <script>
+        var currentAvatar = "https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png";
         function createMessage(avatarUrl, username, date, content)
         {
             const messages = document.getElementById('all-messages');
@@ -23,6 +24,17 @@
             clone.children[2].textContent = date.toLocaleDateString("fr");
             clone.children[3].textContent = content;
             messages.appendChild(clone);
+        }
+        function showHide(element)
+        {
+            if(element.style.display === "none")
+            {
+                element.style.display = "block";
+            }
+            else
+            {
+                element.style.display = "none";
+            }
         }
     </script>
 </head>
@@ -103,13 +115,13 @@
                 const params =
                 {
                     username: "Wumpus",
-                    avatar_url: "https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png",
+                    avatar_url: currentAvatar,
                     content: input.value
                 }
                 input.disabled = true;
                 await request.send(JSON.stringify(params));
 
-                createMessage("https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png", "Wumpus", new Date(), input.value);
+                createMessage(currentAvatar, "Wumpus", new Date(), input.value);
 
                 input.value = "";
                 input.disabled = false;
@@ -240,11 +252,11 @@
     </script>
 
     <div style="display: block; width: 225px; background-color: #232428; position: fixed; bottom: 0px; height: 52px;">
-        <button style="display: block; position: absolute; right: 10px; top: 10px;" class="setting"><img src="discord/parameters.png" width="17px" height="17px" class="setting-icon"></button>
+        <button onclick="showHide(document.getElementsByClassName('user-option')[0])" style="display: block; position: absolute; right: 10px; top: 10px;" class="setting"><img src="discord/parameters.png" width="17px" height="17px" class="setting-icon"></button>
         <button style="display: block; position: absolute; right: 42px; top: 10px;" class="setting"><img src="discord/speak.png" width="17px" height="17px" class="setting-icon"></button>
         <button style="display: block; position: absolute; right: 74px; top: 10px;" class="setting"><img src="discord/listening.png" width="17px" height="17px" class="setting-icon"></button>
-        <div id="user-infos" onclick="showUser()">
-            <img style="position: absolute; left: 5px; bottom: 4px; width: 32px; height: 32px;" width="28px" height="28px" src="family/Wumpus.png" class="icon"></img>
+        <div id="user-infos" onclick="showHide(document.getElementsByClassName('user-profile')[0])">
+            <img id="icon-preview" style="position: absolute; left: 5px; bottom: 4px; width: 32px; height: 32px;" width="28px" height="28px" src="family/Wumpus.png" class="icon"></img>
             <h2 style="font-size: 15px; position: absolute; left: 45px; top: -8px;">Wumpus</h2>
             <h3 style="font-size: 11px; position: absolute; left: 45px; top: 11px; color: #b8b9bf;">#8472</h3>
         </div>
@@ -256,19 +268,44 @@
         <h1 style="font-size: 25px; top: -3px; position: absolute; left: 10px;">Wumpus</h1>
     </div>
     <img src="family/Wumpus.png" class="icon" width="50px" height="50px" style="border: 7px solid; border-color: #232428; width: 80px; height: 80px; background-color: #232428; left: 15px; position: absolute; top: 10px;">
+</div>
+<div class="user-option" style="display: none;">
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043952169071/Neutral.png')" style="top: 12px;" class="user-parameter">
+        <img src="family/Wumpus/Neutral.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Normale</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043469819904/Happy.png')" style="top: 72px;" class="user-parameter">
+        <img src="family/Wumpus/Happy.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Heureux</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043713085520/Love.png')" style="top: 132px;" class="user-parameter">
+        <img src="family/Wumpus/Love.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Cœur</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044245766164/Sleep.png')" style="top: 192px;" class="user-parameter">
+        <img src="family/Wumpus/Sleep.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Dodo</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044476448788/Surprise.png')" style="top: 252px;" class="user-parameter">
+        <img src="family/Wumpus/Surprise.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Surpris</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043184611339/Dead.png')" style="top: 312px;" class="user-parameter">
+        <img src="family/Wumpus/Dead.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Mort</h2>
+    </div>
+    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260042823893032/Cute.png')" style="top: 372px;" class="user-parameter">
+        <img src="family/Wumpus/Cute.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Mignon</h2>
+    </div>
+
     <script>
-        function showUser()
+        function setAvatar(path)
         {
-            var profil = document.getElementsByClassName("user-profile")[0];
-            console.log(profil)
-            if(profil.style.display === "none")
-            {
-                profil.style.display = "block";
-            }
-            else
-            {
-                profil.style.display = "none";
-            }
+            currentAvatar = path;
+            showHide(document.getElementsByClassName('user-option')[0]);
+            document.getElementById("icon-preview").src = path;
+
         }
     </script>
 </div>
