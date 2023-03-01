@@ -45,16 +45,17 @@ body
 }
 input
 {
-    width: calc(100% + -195px);
+    left: 250px !important;
+    width: calc(100% + -305px);
     padding-left: 50px;
     overflow-x: hidden;
     overflow-y: scroll;
     max-height: 50vh;
-    backface-visibility:hidden;
+    backface-visibility: hidden;
     scrollbar-width: none;
     line-height: 2.5;
     font-size: 20px;
-    text-align: start !important; 
+    text-align: start !important;
     color: rgb(224, 225, 229);
     border-radius: 8px;
     background-color: #383a40;
@@ -106,7 +107,7 @@ input
 
 #sticker
 {
-    left: calc(100% + -170px);
+    left: calc(100% + -85px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 500px;
@@ -125,7 +126,7 @@ input
 
 #gif
 {
-    left: calc(100% + -210px);
+    left: calc(100% + -125px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
@@ -145,7 +146,7 @@ input
 
 #gift
 {
-    left: calc(100% + -250px);
+    left: calc(100% + -165px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
@@ -171,13 +172,14 @@ input
 
 #all-messages
 {
+    left: 200px;
     list-style: none;
     height: 70%;
     bottom: 100px;
     border-collapse: collapse;
     position: absolute;
     display: block;
-    width: calc(100% - 48px);
+    width: calc(100% - 240px);
     vertical-align: bottom;
     overflow-x:hidden; 
     overflow-y:scroll;
@@ -308,4 +310,35 @@ input
     background-image: url(discord/channel.png);
     background-repeat: no-repeat;
     background-position: 50%;
+}
+#channels
+{
+    position: fixed;
+    display: block;
+    background-color: #2b2d31;
+    left: 0px;
+    height: 100%;
+    width: 225px;
+    top: 0px;
+}
+.channel
+{
+    display: block;
+    background-color: #2b2d31;
+    border-radius: 5px;
+    font-family: uni sans extra, sans-serif;
+    font-size: 16px;
+    color: #95979f;
+    border: none;
+    line-height: 16px;
+    margin-left: 12.5px;
+    position: fixed;
+    width: 200px;
+    height: 35px;
+    margin-top:10px;
+}
+.channel:hover
+{
+    background-color: #393A3F;
+    color: #dcdee4;
 }
