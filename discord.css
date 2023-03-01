@@ -366,3 +366,17 @@ input
     left: 7.5px;
     filter: brightness(0.8);
 }
+#user-infos
+{
+    position: relative;
+    left:6px;
+    top: 6px;
+    width: 115px;
+    height: 38px;
+    background-color: #232428;
+    border-radius: 5px;
+}
+#user-infos:hover
+{
+    background-color: #36373D;
+}
