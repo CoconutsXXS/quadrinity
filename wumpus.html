@@ -46,7 +46,7 @@
             messages.scrollTop = messages.scrollHeight;
 
             document.getElementById("loading").remove();
-        }, 2000)
+        }, 000)
     }
 </script>
 
@@ -65,29 +65,29 @@
 </ol>
 
 <div id="message-input" style="left: 200px; position: fixed; margin-bottom: 24px; padding-right: 16px; padding-left: 50px; padding-top: -8px;">
-    <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 50px; text-align: center;"></input>
-    <div id="text-message-result" style="left: 250px; position: fixed; bottom: 50px; text-align: center; width: auto"></div>
+    <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 20px; text-align: center;"></input>
+    <div id="text-message-result" style="left: 250px; position: fixed; bottom: 20px; text-align: center; width: auto"></div>
 
-    <div style="display: block; position: fixed; width: 165px; left: calc(100% + -250px); pointer-events: none; background-color: #383a40; height: 50px; bottom: 51px; border-radius: 7px;"></div>
+    <div style="display: block; position: fixed; width: 165px; right: 5px; pointer-events: none; background-color: #383a40; height: 50px; bottom: 20px; border-radius: 7px;"></div>
 
-    <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 70px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
+    <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 40px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
         <img style="width: 24px; height: 24px;" id="upload" src="discord/upload-big.png"/>
     </button>
 
-    <button id="sticker" style="position: fixed; font-size: 16px; bottom: 72.5px; width: 18px; height: 18px;">
+    <button id="sticker" style="position: fixed; font-size: 16px; bottom: 42.5px; width: 18px; height: 18px;">
         <img style="width: 28px; height: 28px;" id="sticker" src="discord/sticker.png"/>
     </button>
 
-    <button id="gif" style="position: fixed; font-size: 16px; bottom: 71px; width: 18px; height: 18px;">
+    <button id="gif" style="position: fixed; font-size: 16px; bottom: 41px; width: 18px; height: 18px;">
         <img style="width: 26px; height: 26px;" id="gif" src="discord/gif.png"/>
     </button>
 
-    <button id="gift" style="position: fixed; font-size: 16px; bottom: 71px; width: 18px; height: 18px;">
+    <button id="gift" style="position: fixed; font-size: 16px; bottom: 41px; width: 18px; height: 18px;">
         <img style="width: 26px; height: 26px;" id="gift" src="discord/gift.png"/>
     </button>
 
 
-    <button id="emote-button" onmouseover="emoteOver()" onmouseleave="emoteLeave()" style="left: calc(100% + -45px); position: fixed; border: #ffffff00; background-color: #ffffff00; bottom: 65px; text-align: center; width: 22px; height: 22px; display: block;">
+    <button id="emote-button" onmouseover="emoteOver()" onmouseleave="emoteLeave()" style="left: calc(100% + -45px); position: fixed; border: #ffffff00; background-color: #ffffff00; bottom: 35px; text-align: center; width: 22px; height: 22px; display: block;">
     <div id="emote" style="background-position-x: 0px; background-position-y: 0px; background-size: 242px 110px; transform: scale(1); filter: grayscale(100%);"></div></button>
 
     <script>
@@ -238,12 +238,18 @@
             });
         }
     </script>
+
+    <div style="display: block; width: 225px; background-color: #232428; position: fixed; bottom: 0px; height: 52px;">
+        <button style="display: block; position: absolute; right: 10px; top: 10px;" class="setting"><img src="discord/parameters.png" width="17px" height="17px" class="setting-icon"></button>
+        <button style="display: block; position: absolute; right: 42px; top: 10px;" class="setting"><img src="discord/speak.png" width="17px" height="17px" class="setting-icon"></button>
+        <button style="display: block; position: absolute; right: 74px; top: 10px;" class="setting"><img src="discord/listening.png" width="17px" height="17px" class="setting-icon"></button>
+    </div>
 </div>
 
 <div id="loading" onload="endLoad()" style="left: 0%; top: 1%; position: fixed; display: block; width: 100%; height: 100%; background-color: #2b2d31;">
-    <video style="width: 32%; height: 32%; position: fixed; top: 35%; left: 50%; transform: translate(-50%, -35%);" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
-    <h2 style="font-size: 82%; text-align: center; position: fixed; top: 52%; left: 50%; transform: translate(-50%, -52%);"><b>LE SAVAIS-TU</b></h2>
-    <h3 style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpus et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
+    <video fetchpriority="VeryHigh" style="width: 32%; height: 32%; position: fixed; top: 35%; left: 50%; transform: translate(-50%, -35%);" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
+    <h2 fetchpriority="VeryHigh" style="font-size: 82%; text-align: center; position: fixed; top: 52%; left: 50%; transform: translate(-50%, -52%);"><b>LE SAVAIS-TU</b></h2>
+    <h3 fetchpriority="VeryHigh" style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpus et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
 </div>
 </body>
 </html>
