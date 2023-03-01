@@ -166,21 +166,21 @@ input
 }
 .mention
 {
-    font-family:uni sans bold, sans-serif;
-    border-radius: 3px;
-    padding: 0 2px;
-    font-weight: 500;
-    unicode-bidi: -moz-plaintext;
-    unicode-bidi: plaintext;
-    color: #c9cdfb;
-    background: #414776;
-    transition: 0.1s;
-    --saturation-factor: 1;
+    font-family:uni sans bold, sans-serif !important;
+    border-radius: 3px !important;
+    padding: 0 2px !important;
+    font-weight: 500 !important;
+    unicode-bidi: -moz-plaintext !important;
+    unicode-bidi: plaintext !important;
+    color: #c9cdfb !important;
+    background: #414776 !important;
+    transition: 0.1s !important;
+    --saturation-factor: 1 !important;
 }
 .mention:hover
 {
-    background: rgb(88, 101, 242);
-    color: rgb(255, 255, 255);
+    background: rgb(88, 101, 242) !important;
+    color: rgb(255, 255, 255) !important;
 }
 .icon
 {

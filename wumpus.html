@@ -106,15 +106,17 @@
             }
             else
             {
-                var index = 0;
-                text.forEach(element => 
+                var text = input.value.split(" ");
+                for (var i = 0; i < text.length; i++)
                 {
-                    if(element.startsWith("@"))
+                    if (text[i].startsWith("@"))
                     {
-                        input.innerHTML = input.innerHTML.replace(element, '<span class="mention">' + element + "</span>");
+                        console.log("Mention détectée !")
+                        text[i] = '<span class="mention">' + text[i] + '</span>';
                     }
-                    index++;
-                });
+                }
+                input.innerHTML = text.join(" ");
+                console.log(input.innerHTML);
             }
         });
     </script>
