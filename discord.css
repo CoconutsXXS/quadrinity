@@ -45,8 +45,8 @@ body
 }
 input
 {
+    width: calc(100% + -195px);
     padding-left: 50px;
-    width: 1.25rem;
     overflow-x: hidden;
     overflow-y: scroll;
     max-height: 50vh;
@@ -106,11 +106,11 @@ input
 
 #sticker
 {
+    left: calc(100% + -170px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 500px;
     border: 0;
-    right: 113px;
     outline: none;
     -webkit-background-clip: url(discord/sticker.png) alpha;
     -webkit-text-fill-color: transparent;
@@ -125,6 +125,7 @@ input
 
 #gif
 {
+    left: calc(100% + -210px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
@@ -144,6 +145,7 @@ input
 
 #gift
 {
+    left: calc(100% + -250px);
     z-index: 2;
     background-color: #ffffff00;
     border-radius: 0px;
@@ -278,7 +280,6 @@ input
 {
     z-index: 2;
     transition: all 0.2s ease, background-position 0s;
-    left: 0px;
     top: 0px;
     margin: 0px;
     position: absolute;
