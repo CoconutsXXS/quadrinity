@@ -174,27 +174,32 @@ input
 {
     left: 200px;
     list-style: none;
-    height: 70%;
-    bottom: 100px;
+    height: 90%;
+    bottom: 65px;
     border-collapse: collapse;
     position: absolute;
     display: block;
     width: calc(100% - 240px);
     vertical-align: bottom;
-    overflow-x:hidden; 
-    overflow-y:scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .message
 {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: -15px;
     position: relative;
     padding: 0px;
     display: inline-block;
     line-height: 100%;
     font-family: uni sans regular, sans-serif;
     align-self: flex-end;
-    width: 100%;
+    width: 101.5%;
+    background-color: #313338;
+    margin-top: 10px;
+}
+.message:hover
+{   
+    background-color: #2e3035;
 }
 .mention
 {
@@ -216,6 +221,9 @@ input
 }
 .icon
 {
+    position: inherit;
+    left: 30px;
+    top:5px;
     border-radius: 1000px;
     width: 40px;
     height: 40px;
@@ -223,6 +231,9 @@ input
 }
 .pseudo
 {
+    position: inherit;
+    left: 30px;
+    top: -17px;
     color: #ffffff;
     font-family:uni sans regular, sans-serif;
     bottom: 24px;
@@ -241,6 +252,9 @@ input
 }
 .time
 {
+    position: inherit;
+    left: 30px;
+    top: -17px;
     position: relative;
     bottom: 24px;
     margin: 2px;
@@ -250,6 +264,9 @@ input
 }
 .content
 {
+    position: inherit;
+    left: 30px;
+    top: -17px;
     color: #e0e1e5;
     bottom: 24px;
     margin-left: 55px;
@@ -262,6 +279,7 @@ input
     white-space: break-spaces;
     font-style: inherit;
     font-family: inherit;
+    margin-right: 25px;
 }
 .upload-button
 {
