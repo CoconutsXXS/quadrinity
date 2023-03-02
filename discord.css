@@ -401,29 +401,3 @@ input
     height: 48px;
     bottom: 12px;
 }
-.user-option
-{
-    display: block;
-    position: fixed;
-    background-color: #111214;
-    height: 432px;
-    width: 240px;
-    left: 90px;
-    bottom: 60px;
-    border-radius: 8px;
-}
-.user-parameter
-{
-    display: block;
-    position: absolute;
-    background-color: #2b2d31;
-    height: 50px;
-    width: 220px;
-    left: 10px;
-    border-radius: 8px;
-    transition: 0.1s;
-}
-.user-parameter:hover
-{
-    background-color: #36373D;
-}
