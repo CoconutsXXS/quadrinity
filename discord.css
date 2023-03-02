@@ -69,6 +69,7 @@ input
     display: block;
     border: 0;
     outline: none;
+    font-family: uni sans regular, sans-serif, bold;
 }
 #text-message-result
 {
