@@ -99,7 +99,7 @@
     </button>
 
 
-    <button id="emote-button" onmouseover="emoteOver()" onmouseleave="emoteLeave()" style="left: calc(100% + -45px); position: fixed; border: #ffffff00; background-color: #ffffff00; bottom: 35px; text-align: center; width: 22px; height: 22px; display: block;">
+    <button id="emote-button" onmouseover="emoteOver()" onmouseleave="emoteLeave()" style="left: calc(100% + -45px  - 260px); position: fixed; border: #ffffff00; background-color: #ffffff00; bottom: 35px; text-align: center; width: 22px; height: 22px; display: block;">
     <div id="emote" style="background-position-x: 0px; background-position-y: 0px; background-size: 242px 110px; transform: scale(1); filter: grayscale(100%);"></div></button>
 
     <script>
@@ -291,6 +291,50 @@
         </div>
     </div>
 </div>
+<ol class="member-container" id="channels" style="line-height: 0px; overflow-y: scroll; overscroll-behavior-x: 0px; overflow-x: hidden; right: 0px; left: auto;top: -15px; width: 190px;">
+    <li style="display: block; height:20px; top: 0px; width: 100%;"></li>
+    <li style="height: 42px; left: -40px; margin-top: 0px; display: inline-block; line-height: 100%; position: relative; margin-bottom: 10px;" id="member-template" class="channel">
+        <img></img>
+        <img src="https://cdn.discordapp.com/avatars/747403159864868864/fd5538290cd63e7715b3668ac154b467.webp?size=160" class="member-icon">
+        <div class="afk"></div>
+        </img>
+        <div class="member-name"><b>Coconuts XXS</b></div>
+    </li>
+
+    <script>
+        async function setMembers()
+        {
+            let data = null;
+            await fetch("https://canary.discord.com/api/guilds/1041036970115215470/widget.json")
+            .then(async response => data=await response.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));
+
+            console.log(data);
+
+            var container = Object.entries(document.getElementsByClassName("member-container"))[0][1];
+            document.getElementById("member-template").style.display = "inline-block";
+            while(container.children.length > 2)
+            {
+                container.removeChild(container.lastChild);
+            }
+            await data.members.forEach(member =>
+            {
+                const template = document.getElementById("member-template");
+                const clone = template.cloneNode(true);
+
+                clone.children[1].src = member.avatar_url;
+                clone.children[3].innerHTML = member.username.bold();
+                clone.children[2].className = member.status;
+                container.appendChild(clone);
+            });
+
+            document.getElementById("member-template").style.display = 'none';
+        }
+        setMembers();
+        setInterval(() => {setMembers();},10000);
+    </script>
+</ol>
 
 <div class="user-profile" style="bottom: 60px; display: none;">
     <div id="name-contener">
@@ -333,7 +377,6 @@
         Object.entries(document.getElementsByClassName("user-parameter")).forEach(element => 
         {
             element = element[1];
-            console.log(element);
             element.addEventListener("mouseover", function()
             {
                 if(element.id === "unselected")
