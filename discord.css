@@ -188,14 +188,13 @@ input
 {
     margin-left: -15px;
     position: relative;
-    padding: 0px;
     display: inline-block;
     line-height: 100%;
     font-family: uni sans regular, sans-serif;
     align-self: flex-end;
     width: 101.5%;
     background-color: #313338;
-    margin-top: 10px;
+    height: auto;
 }
 .message:hover
 {   
