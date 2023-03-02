@@ -185,11 +185,14 @@
             element.addEventListener("mouseover", function()
             {
                 element.children[0].style.filter = "brightness(0.9)";
-                element.style.
+                element.style.backgroundColor = "#393A3F";
+                element.style.color = "#dcdee4"
             });
             element.addEventListener("mouseout", function()
             {
                 element.children[0].style.filter = "brightness(0.6)";
+                element.style.backgroundColor = "#2b2d31";
+                element.style.color = "#95979f"
             });
         }
 
@@ -210,16 +213,22 @@
 
                         element2.addEventListener("mouseover", function()
                         {
-                            element2.children[0].style.filter = "brightness(0.8)";
-                            element2.style.color = "#dcdee4";
-                            element2.style.backgroundColor = "#393A3F";
+                            if(element2.id === "channel")
+                            {
+                                element2.children[0].style.filter = "brightness(0.8)";
+                                element2.style.color = "#dcdee4";
+                                element2.style.backgroundColor = "#393A3F";
+                            }
                         });
                         element2.addEventListener("mouseout", function()
                         {
-                            element2.children[0].style.filter = "brightness(0.6)";
-                            element2.style.color = "#95979f";
-                            element2.style.backgroundColor = "#2b2d31";
-                    });
+                            if(element2.id === "channel")
+                            {
+                                element2.children[0].style.filter = "brightness(0.6)";
+                                element2.style.color = "#95979f";
+                                element2.style.backgroundColor = "#2b2d31";
+                            }
+                        });
                     }
                 }
                 else
@@ -229,6 +238,25 @@
                     element2.style.color = "#95979f";
                     element2.style.backgroundColor = "#2b2d31";
                     element2.id = "channel";
+
+                    element2.addEventListener("mouseover", function()
+                    {
+                        if(element2.id === "channel")
+                        {
+                            element2.children[0].style.filter = "brightness(0.8)";
+                            element2.style.color = "#dcdee4";
+                            element2.style.backgroundColor = "#393A3F";
+                        }
+                    });
+                    element2.addEventListener("mouseout", function()
+                    {
+                        if(element2.id === "channel")
+                        {
+                            element2.children[0].style.filter = "brightness(0.6)";
+                            element2.style.color = "#95979f";
+                            element2.style.backgroundColor = "#2b2d31";
+                        }
+                    });
                 }
             }
             console.log(element)
@@ -271,37 +299,57 @@
     <img src="family/Wumpus.png" id="big-icon-preview" class="icon" width="50px" height="50px" style="border: 7px solid; border-color: #232428; width: 80px; height: 80px; background-color: #232428; left: 15px; position: absolute; top: 10px;">
 </div>
 <div class="user-option" style="display: none;">
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043952169071/Neutral.png')" style="top: 12px;" class="user-parameter">
+    <div id="selected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043952169071/Neutral.png', this)" style="top: 12px;" class="user-parameter">
         <img src="family/Wumpus/Neutral.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Normale</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043469819904/Happy.png')" style="top: 72px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043469819904/Happy.png', this)" style="top: 72px;" class="user-parameter">
         <img src="family/Wumpus/Happy.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Heureux</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043713085520/Love.png')" style="top: 132px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043713085520/Love.png', this)" style="top: 132px;" class="user-parameter">
         <img src="family/Wumpus/Love.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Cœur</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044245766164/Sleep.png')" style="top: 192px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044245766164/Sleep.png', this)" style="top: 192px;" class="user-parameter">
         <img src="family/Wumpus/Sleep.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Dodo</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044476448788/Surprise.png')" style="top: 252px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044476448788/Surprise.png', this)" style="top: 252px;" class="user-parameter">
         <img src="family/Wumpus/Surprise.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Surpris</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043184611339/Dead.png')" style="top: 312px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043184611339/Dead.png', this)" style="top: 312px;" class="user-parameter">
         <img src="family/Wumpus/Dead.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Mort</h2>
     </div>
-    <div onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260042823893032/Cute.png')" style="top: 372px;" class="user-parameter">
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260042823893032/Cute.png', this)" style="top: 372px;" class="user-parameter">
         <img src="family/Wumpus/Cute.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
         <h2 style="position: absolute; left: 60px; font-size: 20px; top: -5px;">Mignon</h2>
     </div>
 
     <script>
-        function setAvatar(path)
+        Object.entries(document.getElementsByClassName("user-parameter")).forEach(element => 
+        {
+            element = element[1];
+            console.log(element);
+            element.addEventListener("mouseover", function()
+            {
+                (element.id === "unselected")
+                {
+                    console.log("Over Unelected");
+                }
+            });
+            element.addEventListener("mouseout", function()
+            {
+                (element.id === "unselected")
+                {
+                    console.log("Out Unelected");
+                }
+            });
+        });
+
+        function setAvatar(path, element)
         {
             currentAvatar = path;
             showHide(document.getElementsByClassName('user-option')[0]);
