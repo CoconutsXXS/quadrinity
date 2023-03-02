@@ -423,7 +423,3 @@ input
     border-radius: 8px;
     transition: 0.1s;
 }
-.user-parameter:hover
-{
-    background-color: #36373D;
-}
