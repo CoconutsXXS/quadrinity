@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Lettre magique : ​​ -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -13,17 +14,23 @@
 
     <script>
         var currentAvatar = "https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png";
-        function createMessage(avatarUrl, username, date, content)
+        async function createMessage(avatarUrl, username, date, content, isFake = false)
         {
-            const messages = document.getElementById('all-messages');
-            const template = document.getElementById("template");
-            const clone = template.cloneNode(true);
+            const messages = await document.getElementById('all-messages');
+            const template = await document.getElementById("template");
+            const clone = await template.cloneNode(true);
 
+            clone.style.display = "inline-block";
             clone.children[0].src = avatarUrl;
             clone.children[1].innerHTML = username.bold();
             clone.children[2].textContent = date.toLocaleDateString("fr");
             clone.children[3].textContent = content;
-            messages.appendChild(clone);
+            if(isFake){ clone.children[1].style.filter = "brightness(0.5)"; }
+            await messages.appendChild(clone);
+
+            var container = await document.getElementById('all-messages');
+            container.style.overflowY = 'scroll';
+            container.scrollTop = container.scrollHeight;
         }
         function showHide(element)
         {
@@ -36,43 +43,35 @@
                 element.style.display = "none";
             }
         }
+        function endLoad()
+        {
+            setTimeout(() => 
+            {
+                var messages = document.getElementById('all-messages');
+                messages.style.overflowY = 'scroll';
+                messages.scrollTop = messages.scrollHeight;
+
+                document.getElementById("loading").remove();
+            }, 5000);
+        }
     </script>
+    <script type="module" src="./discord-message/src/index.js"></script>
 </head>
 
+<!-- <script src="bundle.js"></script> -->
+
 <body onload="endLoad()">
-
-<script>
-    async function endLoad()
-    {
-        console.log("Destroy loading starting..")
-        await fetch('http://localhost:3000/api/data')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-        setTimeout(() => 
-        {
-            console.log("Destroy loading...")
-
-            var messages = document.getElementById('all-messages');
-            messages.style.overflowY = 'scroll';
-            messages.scrollTop = messages.scrollHeight;
-
-            document.getElementById("loading").remove();
-        }, 2000)
-    }
-</script>
-
 <ol id="all-messages">
     <li style="margin-top: 50px;">
         <div id="icon-start"></div>
         <h1 style="position:relative; height: auto; left: 18px; width: 70%; text-align: start;">Bienvenue dans #bar-du-centre !</h1>
         <h3 style="font-size: 16px; color: #b8b9bf; position:relative;left: 18px; width: 70%; text-align: start;">C'est le début du salon #bar-du-centre</h3>
     </li>
-    <li class="message" id="template">
-        <img id="icon" class="icon" src="https://cdn.discordapp.com/avatars/747403159864868864/fd5538290cd63e7715b3668ac154b467.webp?size=160" aria-hidden="true" alt=" "></img>
-        <h3 id="pseudo" class="pseudo"><b>Coconuts XXS</b></h3>
-        <time id="time" class="time" aria-label="Aujourd’hui à 13:53" datetime="2023-02-28T12:53:43.530Z">Aujourd’hui à 13:53</time>
-        <div id="content" class="content">Bonjour, je suis <mark class="mention">@Coconuts XXS</mark> !</div>
+    <li class="message" id="template" style="display: none;">
+        <img id="icon" class="icon" src="https://cdn.discordapp.com/avatars/1077642220674498630/0b8826c16bff25e8231f79b8cb2b30c3.webp" aria-hidden="true" alt=" "></img>
+        <h3 id="pseudo" class="pseudo"><b>Wumpus</b></h3>
+        <time id="time" class="time">Maintenant</time>
+        <div id="content" class="content"></div>
     </li>
 </ol>
 
@@ -108,6 +107,8 @@
         {
             if(event.key === "Enter" && input.value.split("").length > 0)
             {
+                input.disabled = true;
+                const pastLength = document.getElementById("all-messages").children.lenght + 1;
                 const request = new XMLHttpRequest();
                 request.open("POST", "https://canary.discord.com/api/webhooks/1077642220674498630/mOimbQYKmWbicB2dYgaafVDPrAki_lrd48HLK8KlCXu3sIjP8iXv5NxWxSrit0MtR3J1");
                 request.setRequestHeader('Content-type', 'application/json');
@@ -118,11 +119,7 @@
                     avatar_url: currentAvatar,
                     content: input.value
                 }
-                input.disabled = true;
                 await request.send(JSON.stringify(params));
-
-                createMessage(currentAvatar, "Wumpus", new Date(), input.value);
-
                 input.value = "";
                 input.disabled = false;
                 document.getElementById("text-message-result").innerHTML = "";
@@ -293,7 +290,7 @@
 </div>
 <ol class="member-container" id="channels" style="line-height: 0px; overflow-y: scroll; overscroll-behavior-x: 0px; overflow-x: hidden; right: 0px; left: auto;top: -15px; width: 190px;">
     <li style="display: block; height:20px; top: 0px; width: 100%;"></li>
-    <li style="height: 42px; left: -40px; margin-top: 0px; display: inline-block; line-height: 100%; position: relative; margin-bottom: 10px;" id="member-template" class="channel">
+    <li style="width: 220px; height: 42px; left: -46px; margin-top: 5px; display: inline-block; line-height: 100%; position: relative;" id="member-template" class="channel">
         <img></img>
         <img src="https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png" class="member-icon">
         <div class="online"></div>
@@ -305,7 +302,7 @@
         async function setMembers()
         {
             let data = null;
-            await fetch("https://canary.discord.com/api/guilds/1041036970115215470/widget.json")
+            await fetch("https://discord.com/api/guilds/1041036970115215470/widget.json")
             .then(async response => data=await response.json())
             .then(data => console.log(data))
             .catch(err => console.error(err));
@@ -335,8 +332,8 @@
 
 <div class="user-profile" style="bottom: 60px; display: none;">
     <div id="name-contener">
-        <h1 style="font-size: 25px; top: -3px; position: absolute; left: 10px;">Wumpus</h1>
-        <h1 style="left: 117px; font-size: 25px; top: -3px; position: absolute; color: #b8b9bf;">#7429</h1>
+        <h1 style="font-size: 25px; top: -10px; position: absolute; left: 10px;">Wumpus</h1>
+        <h1 style="left: 117px; font-size: 25px; top: -10px; position: absolute; color: #b8b9bf;">#7429</h1>
     </div>
     <img src="family/Wumpus.png" id="big-icon-preview" class="icon" width="50px" height="50px" style="border: 7px solid; border-color: #232428; width: 80px; height: 80px; background-color: #232428; left: 15px; position: absolute; top: 10px;">
 </div>
@@ -416,10 +413,10 @@
     </script>
 </div>
 
-<div id="loading" onload="endLoad()" style="left: 0%; top: 1%; position: fixed; display: block; width: 100%; height: 100%; background-color: #2b2d31;">
-    <video fetchpriority="VeryHigh" style="width: 32%; height: 32%; position: fixed; top: 35%; left: 50%; transform: translate(-50%, -35%);" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
-    <h2 fetchpriority="High" style="font-size: 82%; text-align: center; position: fixed; top: 52%; left: 50%; transform: translate(-50%, -52%);"><b>LE SAVAIS-TU</b></h2>
-    <h3 fetchpriority="High" style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpus et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
+<div id="loading" onload="endLoad()" style="left: 0%; top: 0%; position: fixed; display: block; width: 100%; height: 100%; background-color: #2b2d31;">
+    <video fetchpriority="high" style="width: 32%; height: 32%; position: fixed; top: 35%; left: 50%; transform: translate(-50%, -35%);" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
+    <h2 fetchpriority="high" style="font-size: 82%; text-align: center; position: fixed; top: 52%; left: 50%; transform: translate(-50%, -52%);"><b>LE SAVAIS-TU</b></h2>
+    <h3 fetchpriority="high" style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpus et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
 </div>
 </body>
 </html>

@@ -182,8 +182,8 @@ input
 {
     left: 200px;
     list-style: none;
-    height: 91%;
-    bottom: 45px;
+    height: calc(100% - 55px);
+    bottom: 55px;
     border-collapse: collapse;
     position: absolute;
     display: block;
