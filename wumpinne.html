@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="discord-blue.css">
+    <link rel="stylesheet" href="discord-pink.css">
 
     <!-- Titre -->
     <title>Quadrinity</title>
     <!-- Logo d'onglet -->
-    <link rel="shortcut icon" href="discord/wumpus.png">
+    <link rel="shortcut icon" href="discord/Wumpinne.png">
 
     <script>
-        var currentAvatar = "https://cdn.discordapp.com/attachments/1042422997681721354/1078639990734590042/Neutral.png";
+        var currentAvatar = "https://cdn.discordapp.com/attachments/1077914729961488426/1081251403202298008/Neutral.png";
         async function createMessage(avatarUrl, username, date, content, isFake = false)
         {
             const messages = await document.getElementById('all-messages');
@@ -65,11 +65,11 @@
     <li style="margin-top: 50px;">
         <div id="icon-start"></div>
         <h1 style="position:relative; height: auto; left: 18px; width: 70%; text-align: start;">Bienvenue dans #bar-du-centre !</h1>
-        <h3 style="font-size: 16px; color: #b8b9bf; position:relative;left: 18px; width: 70%; text-align: start;">C'est le début du salon #bar-du-centre</h3>
+        <h3 style="font-size: 16px; color: #bfb8bf; position:relative;left: 18px; width: 70%; text-align: start;">C'est le début du salon #bar-du-centre</h3>
     </li>
     <li class="message" id="template" style="display: none;">
         <img id="icon" class="icon" src="https://cdn.discordapp.com/avatars/1077642220674498630/0b8826c16bff25e8231f79b8cb2b30c3.webp" aria-hidden="true" alt=" "></img>
-        <h3 id="pseudo" class="pseudo"><b>Wumpus</b></h3>
+        <h3 id="pseudo" class="pseudo"><b>Wumpinne</b></h3>
         <time id="time" class="time">Maintenant</time>
         <div id="content" class="content"></div>
     </li>
@@ -79,7 +79,7 @@
     <input id="text-message-input" type="text" placeholder="Envoyer un message dans #bar-du-centre" style="position: fixed; bottom: 20px; text-align: center;"></input>
     <div id="text-message-result" style="z-index: 0; width: calc(100% + -568px); left: 250px; position: fixed; bottom: 20px; text-align: center;"></div>
 
-    <div style="display: block; position: fixed; width: 165px; right: 270px; pointer-events: none; background-color: #383a40; height: 50px; bottom: 20px; border-radius: 7px;"></div>
+    <div style="display: block; position: fixed; width: 165px; right: 270px; pointer-events: none; background-color: #3d3840; height: 50px; bottom: 20px; border-radius: 7px;"></div>
 
     <button style="position: fixed; font-size: 16px; padding-left: 14px; bottom: 40px; width: 18px; height: 18px;" id="upload" aria-label="Uploader un fichier ou envoyer des invitations">
         <img style="width: 24px; height: 24px;" id="upload" src="discord/upload-big.png"/>
@@ -110,12 +110,12 @@
                 input.disabled = true;
                 const pastLength = document.getElementById("all-messages").children.lenght + 1;
                 const request = new XMLHttpRequest();
-                request.open("POST", "https://canary.discord.com/api/webhooks/1077642220674498630/mOimbQYKmWbicB2dYgaafVDPrAki_lrd48HLK8KlCXu3sIjP8iXv5NxWxSrit0MtR3J1");
+                request.open("POST", "https://canary.discord.com/api/webhooks/1077976241086398515/gMgu_CXkQp4Fwxkby5BtxRdfa2nom7Ctgcn5_hd1S9aUN80QvTjR4U8OiPgnRRMK0ayO");
                 request.setRequestHeader('Content-type', 'application/json');
 
                 const params =
                 {
-                    username: "Wumpus",
+                    username: "Wumpinne",
                     avatar_url: currentAvatar,
                     content: input.value
                 }
@@ -182,14 +182,14 @@
             element.addEventListener("mouseover", function()
             {
                 element.children[0].style.filter = "brightness(0.9)";
-                element.style.backgroundColor = "#393A3F";
-                element.style.color = "#dcdee4"
+                element.style.backgroundColor = "#3e393f";
+                element.style.color = "#e3dce4"
             });
             element.addEventListener("mouseout", function()
             {
                 element.children[0].style.filter = "brightness(0.6)";
-                element.style.backgroundColor = "#2b2d31";
-                element.style.color = "#95979f"
+                element.style.backgroundColor = "#302b31";
+                element.style.color = "#9f959f"
             });
         }
 
@@ -205,16 +205,16 @@
                         const element2 = document.getElementById("channel-selected")[index2];
                         element2.id = "channel";
                         element2.children[0].style.filter = "brightness(0.6)";
-                        element2.style.color = "#95979f";
-                        element2.style.backgroundColor = "#2b2d31";
+                        element2.style.color = "#9f959f";
+                        element2.style.backgroundColor = "#302b31";
 
                         element2.addEventListener("mouseover", function()
                         {
                             if(element2.id === "channel")
                             {
                                 element2.children[0].style.filter = "brightness(0.8)";
-                                element2.style.color = "#dcdee4";
-                                element2.style.backgroundColor = "#393A3F";
+                                element2.style.color = "#e3dce4";
+                                element2.style.backgroundColor = "#3e393f";
                             }
                         });
                         element2.addEventListener("mouseout", function()
@@ -222,8 +222,8 @@
                             if(element2.id === "channel")
                             {
                                 element2.children[0].style.filter = "brightness(0.6)";
-                                element2.style.color = "#95979f";
-                                element2.style.backgroundColor = "#2b2d31";
+                                element2.style.color = "#9f959f";
+                                element2.style.backgroundColor = "#302b31";
                             }
                         });
                     }
@@ -232,8 +232,8 @@
                 {
                     const element2 = document.getElementById("channel-selected");
                     element2.children[0].style.filter = "brightness(0.6)";
-                    element2.style.color = "#95979f";
-                    element2.style.backgroundColor = "#2b2d31";
+                    element2.style.color = "#9f959f";
+                    element2.style.backgroundColor = "#302b31";
                     element2.id = "channel";
 
                     element2.addEventListener("mouseover", function()
@@ -241,8 +241,8 @@
                         if(element2.id === "channel")
                         {
                             element2.children[0].style.filter = "brightness(0.8)";
-                            element2.style.color = "#dcdee4";
-                            element2.style.backgroundColor = "#393A3F";
+                            element2.style.color = "#e3dce4";
+                            element2.style.backgroundColor = "#3e393f";
                         }
                     });
                     element2.addEventListener("mouseout", function()
@@ -250,8 +250,8 @@
                         if(element2.id === "channel")
                         {
                             element2.children[0].style.filter = "brightness(0.6)";
-                            element2.style.color = "#95979f";
-                            element2.style.backgroundColor = "#2b2d31";
+                            element2.style.color = "#9f959f";
+                            element2.style.backgroundColor = "#302b31";
                         }
                     });
                 }
@@ -260,31 +260,31 @@
             element.id = "channel-selected";
             element.children[0].style.filter = "brightness(1)";
             element.style.color = "#ffffffff";
-            element.style.backgroundColor = "#3f4248";
+            element.style.backgroundColor = "#483f47";
 
             element.removeEventListener("mouseover", function()
             {
                 element.children[0].style.filter = "brightness(0.8)";
-                element.style.color = "#dcdee4";
-                element.style.backgroundColor = "#393A3F";
+                element.style.color = "#e3dce4";
+                element.style.backgroundColor = "#3e393f";
             });
             element.removeEventListener("mouseout", function()
             {
                 element.children[0].style.filter = "brightness(0.6)";
-                element.style.color = "#95979f";
-                element.style.backgroundColor = "#2b2d31";
+                element.style.color = "#9f959f";
+                element.style.backgroundColor = "#302b31";
             });
         }
     </script>
 
-    <div style="display: block; width: 225px; background-color: #232428; position: fixed; bottom: 0px; height: 52px;">
+    <div style="display: block; width: 225px; background-color: #272328; position: fixed; bottom: 0px; height: 52px;">
         <button onclick="showHide(document.getElementsByClassName('user-option')[0])" style="display: block; position: absolute; right: 10px; top: 10px;" class="setting"><img src="discord/parameters.png" width="17px" height="17px" class="setting-icon"></button>
         <button style="display: block; position: absolute; right: 42px; top: 10px;" class="setting"><img src="discord/speak.png" width="17px" height="17px" class="setting-icon"></button>
         <button style="display: block; position: absolute; right: 74px; top: 10px;" class="setting"><img src="discord/listening.png" width="17px" height="17px" class="setting-icon"></button>
         <div id="user-infos" onclick="showHide(document.getElementsByClassName('user-profile')[0])">
-            <img id="icon-preview" style="position: absolute; width: 32px; height: 32px; left: 5px; top: 1px;" width="28px" height="28px" src="family/Wumpus.png" class="icon"></img>
-            <h2 style="font-size: 15px; position: absolute; left: 45px; top: -8px;">Wumpus</h2>
-            <h3 style="font-size: 11px; position: absolute; left: 45px; top: 11px; color: #b8b9bf;">#7429</h3>
+            <img id="icon-preview" style="position: absolute; width: 32px; height: 32px; left: 5px; top: 1px;" width="28px" height="28px" src="family/Wumpinne.png" class="icon"></img>
+            <h2 style="font-size: 15px; position: absolute; left: 45px; top: -8px;">Wumpinne</h2>
+            <h3 style="font-size: 11px; position: absolute; left: 45px; top: 11px; color: #655667;">#7429</h3>
         </div>
     </div>
 </div>
@@ -353,39 +353,39 @@
 
 <div class="user-profile" style="bottom: 60px; display: none;">
     <div id="name-contener">
-        <h1 style="font-size: 25px; top: -10px; position: absolute; left: 10px;">Wumpus</h1>
-        <h1 style="left: 117px; font-size: 25px; top: -10px; position: absolute; color: #b8b9bf;">#7429</h1>
+        <h1 style="font-size: 25px; top: -10px; position: absolute; left: 10px;">Wumpinne</h1>
+        <h1 style="left: 117px; font-size: 25px; top: -10px; position: absolute; color: #bfb8bf;">#7429</h1>
     </div>
-    <img src="family/Wumpus.png" id="big-icon-preview" class="icon" width="50px" height="50px" style="border: 7px solid; border-color: #232428; width: 80px; height: 80px; background-color: #232428; left: 15px; position: absolute; top: 10px;">
+    <img src="family/Wumpinne.png" id="big-icon-preview" class="icon" width="50px" height="50px" style="border: 7px solid; border-color: #232428; width: 80px; height: 80px; background-color: #232428; left: 15px; position: absolute; top: 10px;">
 </div>
 <div class="user-option" style="display: none;">
-    <div id="selected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043952169071/Neutral.png', this)" style="top: 12px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260043952169071/Neutral.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Normale</h2>
+    <div id="selected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259770840055839/Neutral.png', this)" style="top: 12px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259770840055839/Neutral.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Normale</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043469819904/Happy.png', this)" style="top: 72px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260043469819904/Happy.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Heureux</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259770332553246/Happy.png', this)" style="top: 72px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259770332553246/Happy.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Heureux</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043713085520/Love.png', this)" style="top: 132px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260043713085520/Love.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Cœur</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259770613567568/Love.png', this)" style="top: 132px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259770613567568/Love.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Cœur</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044245766164/Sleep.png', this)" style="top: 192px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260044245766164/Sleep.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Dodo</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259771129471056/Sleep.png', this)" style="top: 192px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259771129471056/Sleep.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Dodo</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260044476448788/Surprise.png', this)" style="top: 252px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260044476448788/Surprise.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Surpris</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259771444039780/Surprise.png', this)" style="top: 252px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259771444039780/Surprise.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Surpris</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260043184611339/Dead.png', this)" style="top: 312px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260043184611339/Dead.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Mort</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259770076696618/Dead.png', this)" style="top: 312px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259770076696618/Dead.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Mort</h2>
     </div>
-    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078260042823893032/Cute.png', this)" style="top: 372px;" class="user-parameter">
-        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078260042823893032/Cute.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
-        <h2 style="transition: 0.1s; color: #95979f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Mignon</h2>
+    <div id="unselected" onclick="setAvatar('https://cdn.discordapp.com/attachments/1063771539318788117/1078259769732767854/Cute.png', this)" style="top: 372px;" class="user-parameter">
+        <img src="https://cdn.discordapp.com/attachments/1063771539318788117/1078259769732767854/Cute.png" style="position: absolute; height: 40px; width: 40px; left: 5px; top: 5px; border-radius: 1000px;">
+        <h2 style="transition: 0.1s; color: #9f959f; position: absolute; left: 60px; font-size: 20px; top: -5px;">Mignon</h2>
     </div>
 
     <script>
@@ -396,34 +396,34 @@
             {
                 if(element.id === "unselected")
                 {
-                    element.children[1].style.color = "#dcdee4";
-                    element.style.backgroundColor = "#393A3F";
+                    element.children[1].style.color = "#e3dce4";
+                    element.style.backgroundColor = "#3e393f";
                 }
             });
             element.addEventListener("mouseout", function()
             {
                 if(element.id === "unselected")
                 {
-                    element.children[1].style.color = "#95979f";
-                    element.style.backgroundColor = "#2b2d31";
+                    element.children[1].style.color = "#9f959f";
+                    element.style.backgroundColor = "#302b31";
                 }
             });
 
             if(element.id === "selected")
             {
                 element.children[1].style.color = "#ffffffff";
-                element.style.backgroundColor = "#3f4248";
+                element.style.backgroundColor = "#483f47";
             }
         });
 
         function setAvatar(path, element)
         {
-            document.getElementById("selected").children[1].style.color = "#95979f";
-            document.getElementById("selected").style.backgroundColor = "#2b2d31";
+            document.getElementById("selected").children[1].style.color = "#9f959f";
+            document.getElementById("selected").style.backgroundColor = "#302b31";
             document.getElementById("selected").id = "unselected";
             element.id = "selected";
             element.children[1].style.color = "#ffffffff";
-            element.style.backgroundColor = "#3f4248";
+            element.style.backgroundColor = "#483f47";
 
             currentAvatar = path;
             showHide(document.getElementsByClassName('user-option')[0]);
@@ -434,10 +434,10 @@
     </script>
 </div>
 
-<div id="loading" onload="endLoad()" style="left: 0%; top: 0%; position: fixed; display: block; width: 100%; height: 100%; background-color: #2b2d31;">
+<div id="loading" onload="endLoad()" style="left: 0%; top: 0%; position: fixed; display: block; width: 100%; height: 100%; background-color: #302b31;">
     <video fetchpriority="high" style="width: 32%; height: 32%; position: fixed; top: 35%; left: 50%; transform: translate(-50%, -35%);" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
     <h2 fetchpriority="high" style="font-size: 82%; text-align: center; position: fixed; top: 52%; left: 50%; transform: translate(-50%, -52%);"><b>LE SAVAIS-TU</b></h2>
-    <h3 fetchpriority="high" style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpus et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
+    <h3 fetchpriority="high" style="font-size: 90%; color: #e0e1e5; text-align: center; width: 25%; position: fixed; top: 58%; left: 50%; transform: translate(-50%, -58%);">Wumpinne et Wumpa ont des personnalités très différentes et ils sont pourtant très amis.</h3>
 </div>
 </body>
 </html>

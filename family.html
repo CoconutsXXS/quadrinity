@@ -16,25 +16,25 @@
 <div style="position: absolute; height: 500px; top: 210px; width: 100%; left: 0px;">
     <div class="wumpus-selection" id="wumpus" style="left: 15px; height: 275px; width: 275px;">
         <h2 class="text-selection">WUMPUS</h2>
-        <a onclick="openDiscord('wumpus.html', '#5865F2')">
+        <a onclick="openDiscord('wumpus.html', '#5865F2', '#2b2d31')">
             <img src="family/Wumpus.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #5865F2);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpa" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#FEE75C, #ffffff); -webkit-background-clip: text;">WUMPA</h2>
-        <a onclick="openDiscord(2, '#FEE75C')">
+        <a onclick="openDiscord('wumpa.html', '#FEE75C', '#31302b')">
             <img src="family/Wumpa.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #FEE75C);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpos" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#57F287, #ffffff); -webkit-background-clip: text;">WUMPOS</h2>
-        <a onclick="openDiscord(3, '#57F287')">
+        <a onclick="openDiscord('wumpos.html', '#57F287', '#2b312b')">
             <img src="family/Wumpos.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #57F287);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpinne" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#EB459E, #ffffff); -webkit-background-clip: text;">WUMPINNE</h2>
-        <a onclick="openDiscord(4, '#EB459E')">
+        <a onclick="openDiscord('wumpinne.html', '#EB459E', '#302b31')">
             <img src="family/Wumpinne.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #EB459E);"></image>
         </a>
     </div>
@@ -54,7 +54,7 @@
 </div>
 
 <script>
-    function openDiscord(url, color)
+    function openDiscord(url, color, colorMask)
     {
         document.getElementById("discord-logo").style.transition = "all 0.3s"
         document.getElementById("discord-logo").style.width = "30%";
@@ -66,7 +66,7 @@
         setTimeout(function()
         {
             document.getElementById("cadre").style.borderColor = color;
-            document.getElementById("discord-logo").style.transition = "all 0.45s"
+            document.getElementById("discord-logo").style.transition = "all 0.55s"
             document.getElementById("discord-logo").style.width = "12000%";
             document.getElementById("discord-logo").style.height = "12000%";
             document.getElementById("cadre").style.transition = "all 2s";
@@ -75,7 +75,7 @@
             {
                 document.body.style.overflowY = "hidden";
                 document.body.style.overflowX = "hidden";
-                document.getElementById("mask").style.backgroundColor = "#2b2d31";
+                document.getElementById("mask").style.backgroundColor = colorMask;
                 setTimeout(function()
                 {
                     window.location.href = url;
