@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="family.css">
     <link rel="stylesheet" href="blue.css">
+    <link rel="stylesheet" href="family.css">
 
     <!-- Titre -->
     <title>Quadrinity</title>
@@ -16,25 +16,25 @@
 <div style="position: absolute; height: 500px; top: 210px; width: 100%; left: 0px;">
     <div class="wumpus-selection" id="wumpus" style="left: 15px; height: 275px; width: 275px;">
         <h2 class="text-selection">WUMPUS</h2>
-        <a href="wumpus.html">
+        <a onclick="openDiscord('wumpus.html', '#5865F2')">
             <img src="family/Wumpus.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #5865F2);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpa" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#FEE75C, #ffffff); -webkit-background-clip: text;">WUMPA</h2>
-        <a>
+        <a onclick="openDiscord(2, '#FEE75C')">
             <img src="family/Wumpa.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #FEE75C);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpos" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#57F287, #ffffff); -webkit-background-clip: text;">WUMPOS</h2>
-        <a>
+        <a onclick="openDiscord(3, '#57F287')">
             <img src="family/Wumpos.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #57F287);"></image>
         </a>
     </div>
     <div class="wumpus-selection" id="wumpinne" style="height: 275px; width: 275px;">
         <h2 class="text-selection" style="background: linear-gradient(#EB459E, #ffffff); -webkit-background-clip: text;">WUMPINNE</h2>
-        <a>
+        <a onclick="openDiscord(4, '#EB459E')">
             <img src="family/Wumpinne.png" style="height: 275px; width: 275px; background: -webkit-linear-gradient(#00000000, #EB459E);"></image>
         </a>
     </div>
@@ -52,6 +52,38 @@
     <h4 style="margin-top: 290px; position: absolute; right: 25px; background-color: #cd86ff; margin-right: 25px; width: 45%; text-align: right;">Wumpa est très sérieuse et a tendance à considérer son entourage inférieur à elle. Elle est copine avec Wumpus car elle le trouve bête et rigolo et elle se sent en supériorité intellectuelle quand elle est avec lui.</h4>
 
 </div>
+
+<script>
+    function openDiscord(url, color)
+    {
+        document.getElementById("discord-logo").style.transition = "all 0.3s"
+        document.getElementById("discord-logo").style.width = "30%";
+        document.getElementById("discord-logo").style.height = "30%";
+        document.getElementById("mask").style.pointerEvents = "all";
+        document.getElementById("cadre-invisible").style.borderColor = color;
+        document.getElementById("cadre-invisible").id = "cadre"
+        document.getElementById("cadre").style.borderColor = color;
+        setTimeout(function()
+        {
+            document.getElementById("cadre").style.borderColor = color;
+            document.getElementById("discord-logo").style.transition = "all 0.45s"
+            document.getElementById("discord-logo").style.width = "12000%";
+            document.getElementById("discord-logo").style.height = "12000%";
+            document.getElementById("cadre").style.transition = "all 2s";
+            document.getElementById("cadre").id = "cadre-invisible"
+            setTimeout(function()
+            {
+                document.body.style.overflowY = "hidden";
+                document.body.style.overflowX = "hidden";
+                document.getElementById("mask").style.backgroundColor = "#2b2d31";
+                setTimeout(function()
+                {
+                    window.location.href = url;
+                }, 1500)
+            }, 1200);
+        }, 2000);
+    }
+</script>
 
 <body>
     <div id='menue'>
@@ -97,4 +129,11 @@
         });
     </script>
 </body>
+
+<body>
+    <video fetchpriority="high" id="discord-logo" autoplay="" class="ready-3BZNWT" loop="" playsinline="" data-testid="app-spinner"><source src="discord/logoSpinning.webm" type="video/webm"></video>
+    <div id="cadre-invisible"></div>
+    <div id="mask" style="pointer-events: none; position: fixed; left: 0px; top: 0px; background-color: #ffffff00; transition: all 0.5s; width: 100%; height: 100%;"></div>
+</body>
+
 </html>

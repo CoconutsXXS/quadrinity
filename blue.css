@@ -73,6 +73,7 @@ h5
 
 input
 {
+    overflow-x: "none";
     border: 0;
     transition-duration: 0.2s;
     line-height: 2.5;
@@ -161,6 +162,7 @@ body
 {
     background: linear-gradient(90deg, #202348 10%, #1b2057 60%, #5865F2 90%);
     width: 90vw;
+    transition: all 2s;
 }
 
 #menue

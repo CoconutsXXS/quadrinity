@@ -7,7 +7,23 @@
 
     transition: all 0.2s;
     filter: drop-shadow(2px 2px 1.5rem rgba(0, 0, 0, 0.75));
-} 
+}
+.blue {
+    background-Image: linear-gradient(90deg, rgba(0,6,75,1) 0%, rgba(27,32,83,1) 31%, rgba(88,101,242,1) 100%);
+    transition: all 2s;
+}
+.yellow {
+    background-Image: linear-gradient(90deg, rgba(87,75,0,1) 0%, rgba(55,51,23,1) 31%, rgba(254,231,92,1) 100%);
+    transition: all 2s;
+}
+.green {
+    background-Image: linear-gradient(90deg, rgba(47,85,59,1) 0%, rgba(0,73,22,1) 31%, rgba(87,242,135,1) 100%);
+    transition: all 2s;
+}
+.pink {
+    background-Image: linear-gradient(90deg, rgba(77,36,70,1) 0%, rgba(62,0,80,1) 31%, rgba(235,69,158,1) 100%);
+    transition: all 2s;
+}
 
 #wumpus:hover{ filter: drop-shadow(2px 2px 3rem #5865F2); }
 #wumpa:hover{ filter: drop-shadow(2px 2px 3rem #FEE75C); }
@@ -34,4 +50,40 @@
 {
     font-size:55px;
     text-align: center;
+}
+#discord-logo
+{
+    width: 0%;
+    height: 0%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+#cadre
+{
+    transition: all 0.5s;
+    border: 100px solid;
+    border-radius: 200px;
+    background-color: #ffffff00;
+    pointer-events: none;
+    position: fixed;
+    left: -65px;
+    top: -65px;
+    width: calc(100% + -75px);
+    height: calc(100% + -75px);
+}
+#cadre-invisible
+{
+    transition: all 0.5s;
+    border: 0px solid;
+    border-radius: 0px;
+    background-color: #ffffff00;
+    pointer-events: none;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    width: calc(100% + 0px);
+    height: calc(100% + 0px);
 }
