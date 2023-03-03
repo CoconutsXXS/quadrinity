@@ -204,6 +204,7 @@ input
     width: 101.5%;
     background-color: #313338;
     height: auto;
+    margin-top: -8px;
 }
 .message:hover
 {   
