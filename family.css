@@ -1,5 +1,6 @@
 .wumpus-selection
-{ 
+{
+    margin: 14.5px;
     opacity: 1;
     display: inline-block;
     cursor: pointer;
@@ -18,13 +19,16 @@
     transition: all 0.2s;
     position: absolute;
     top: 8px;
-    left: 16px;
+    left: 0px;
     background: linear-gradient(#5865F2, #ffffff);
+    background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(2px 2px 0.75rem rgba(0, 0, 0, 0.8));
-    text-align:start;
-    font-size:40px;
+    text-align: start;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
 }
 .text-selection:hover
 {
