@@ -180,6 +180,30 @@ body
     top: -75px;
 }
 
+button
+{
+    border: 0;
+    transition-duration: 0.2s;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family:uni sans bold, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    background-color: #5865F2;
+    background-size: cover;
+    box-shadow: inset 7px 7px 15px hsla(0, 0%, 100%, 0.4), inset -8px -8px 18px hsla(0, 0%, 0%, 0.4);
+}
+button:hover
+{
+    box-shadow: inset 7px 7px 20px hsla(0, 0%, 100%, 0.5), inset -8px -8px 24px hsla(0, 0%, 0%, 0.5);
+}
+button:focus
+{
+    box-shadow: inset 7px 7px 36px hsla(0, 0%, 100%, 0.5), inset -8px -8px 36px hsla(0, 0%, 0%, 0.5);
+}
+
 #name-connect
 {
     transition: width 1.8s font-size 3s;
