@@ -16,8 +16,9 @@
             grant_type: 'authorization_code',
             code,
             redirect_uri: 'https://coconutsxxs.github.io/quadrinity/home.html',
-            scope: 'identify, guilds.join, connections, guilds, rpc, rpc.activities.write, activities',
+            scope: 'identify, guilds.join, connections, guilds, rpc, rpc.activities.write, activities.write',
         };
+
 
         fetch('https://discord.com/api/oauth2/token', 
         {
