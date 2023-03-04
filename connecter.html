@@ -9,14 +9,14 @@
 <body>
     <script>
         const code = new URLSearchParams(window.location.search).get('code');
-        const data = 
+        const data =
         {
             client_id: '1041359558934790215',
             client_secret: 'nJbchlih8gqILxyadgijg1CxqSXgWnJc',
             grant_type: 'authorization_code',
             code,
             redirect_uri: 'https://coconutsxxs.github.io/quadrinity/connecter.html',
-            scope: 'identify, guilds.join, connections, guilds, activities.write, rpc, rpc.activities.write, activities',
+            scope: 'identify connections guilds.join guilds rpc activities.write rpc.activities.write',
         };
 
         fetch('https://discord.com/api/oauth2/token', 
