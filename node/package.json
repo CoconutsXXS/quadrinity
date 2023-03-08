@@ -9,6 +9,7 @@
   "author": "Coconuts XXS",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "firebase": "^9.17.2"
   }
 }
