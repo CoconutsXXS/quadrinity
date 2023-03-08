@@ -8,7 +8,7 @@
     <title>Quadrinity - Accueil</title>
 </head>
 <div id="backGround">
-    <img style="position: fixed; opacity: 0.65; right: -100px; top: -100px; width: 35%;" src="gifs/holoEarth.gif" alt="wire-sphere">
+    <img style="position: fixed; opacity: 0.65; right: -100px; top: -100px; width: 45%;" src="gifs/Hologramme.gif" alt="wire-sphere">
     <h6 style="position: fixed; top: 75px; width: 90%; left: 5%;" id="binary"></h6>
     <h5 class="charBinary">0</h5>
     <script>
@@ -48,7 +48,7 @@
                 element.style.top = window.innerHeight * Math.random() + "px";
             }, 200);
 
-            for(let index = 0; index < 10; index++)
+            for(let index = 0; index < 7; index++)
             {
                 setTimeout(() =>
                 {
@@ -60,14 +60,17 @@
             setTimeout(() => 
             {
                 element.style.color = "#00ff6e00";
-                const clone = element.cloneNode(true);
-                document.getElementById("backGround").appendChild(clone);
-                charAnimation(document.getElementsByClassName("charBinary")[document.getElementsByClassName("charBinary").length - 1]);
+                if(document.getElementsByClassName("charBinary").length < 5)
+                {
+                    const clone = element.cloneNode(true);
+                    document.getElementById("backGround").appendChild(clone);
+                    charAnimation(document.getElementsByClassName("charBinary")[document.getElementsByClassName("charBinary").length - 1]);
+                }
             }, 1000);
             setTimeout(() => 
             {
                 element.remove();
-                if(document.getElementsByClassName("charBinary").length < 7)
+                if(document.getElementsByClassName("charBinary").length < 5)
                 {
                     const clone = element.cloneNode(true);
                     document.getElementById("backGround").appendChild(clone);
