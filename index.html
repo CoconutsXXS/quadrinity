@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Quadrinity - Accueil</title>
+</head>
+<div id="backGround">
+    <img style="position: fixed; opacity: 0.65; right: -100px; top: -100px; width: 35%;" src="gifs/holoEarth.gif" alt="wire-sphere">
+    <h6 style="position: fixed; top: 75px; width: 90%; left: 5%;" id="binary"></h6>
+    <h5 class="charBinary">0</h5>
+    <script>
+        for (let index = 0; index < 11000; index++)
+        {
+            setTimeout(() => 
+            {
+                const element = document.getElementById("binary");
+                const random = Math.round(Math.random());
+                element.textContent += random.toString() + " ";
+            }, index * 50 * Math.random())
+        }
+        for(let index = 0; index < document.getElementsByClassName("charBinary").length; index++)
+        {
+            const element = document.getElementsByClassName("charBinary")[index];
+            setTimeout(() =>
+            {
+                element.textContent = Math.round(Math.random());
+            }, 200 * Math.random());
+        }
+
+        charAnimation(document.getElementsByClassName("charBinary")[0]);
+        function charAnimation(element)
+        {
+            setTimeout(() => 
+            {
+                element.style.transition = "left 0s, top 0s, color 0s";
+                element.textContent = Math.round(Math.random());
+                element.style.color = "#00ff6e10";
+                element.style.left = window.innerWidth * Math.random() + "px";
+                element.style.top = window.innerHeight * Math.random() + "px";
+            }, 1);
+            setTimeout(() => 
+            {
+                element.style.transition = "left 2.5s, top 2.5s, color 0.5s";
+                element.style.left = window.innerWidth * Math.random() + "px";
+                element.style.top = window.innerHeight * Math.random() + "px";
+            }, 200);
+
+            for(let index = 0; index < 10; index++)
+            {
+                setTimeout(() =>
+                {
+                    console.log("Heloo");
+                    element.textContent = Math.round(Math.random()).toString();
+                }, 1000 * Math.random());
+            }
+
+            setTimeout(() => 
+            {
+                element.style.color = "#00ff6e00";
+                const clone = element.cloneNode(true);
+                document.getElementById("backGround").appendChild(clone);
+                charAnimation(document.getElementsByClassName("charBinary")[document.getElementsByClassName("charBinary").length - 1]);
+            }, 1000);
+            setTimeout(() => 
+            {
+                element.remove();
+                if(document.getElementsByClassName("charBinary").length < 7)
+                {
+                    const clone = element.cloneNode(true);
+                    document.getElementById("backGround").appendChild(clone);
+                    charAnimation(document.getElementsByClassName("charBinary")[document.getElementsByClassName("charBinary").length - 1]);
+                }
+            }, 1500);
+        }
+    </script>
+</div>
+<body>
+    <h1>Accueil</h1>
+    <h2>Qu'est ce que Quadrinity ?</h2>
+    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptate dolorum optio unde iusto voluptatibus fuga perferendis, illo ad cumque dolores praesentium tempore libero doloremque aut totam, commodi consectetur. Odit.</h4>
+</body>
+<body>
+</html>

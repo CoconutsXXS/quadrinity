@@ -1,0 +1,117 @@
+/* Variables */
+:root
+{
+    --principal: #00ff6e;
+    --principal-minidark: #00e362;
+    --principal-midark: #00ba51;
+    --principal-alpha: #00ff6e80;
+    --principal-mialpha: #00ff6e0d;
+}
+  
+/* Body */
+body
+{
+    background-color: black;
+    scrollbar-color: var(--principal) black; 
+    scrollbar-shadow-color: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;
+}
+
+/* Text */
+h1
+{
+    font-family: conthrax, sans-serif;
+    font-size:100px;
+    text-align: center;
+    color: var(--principal);
+    text-shadow:var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;
+    animation-name: light-bug;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes light-bug
+{
+    0%   {color: var(--principal); text-shadow: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+
+    50%   {color: var(--principal); text-shadow: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+    52%   {color: black; text-shadow: black 0px 0px 0px, 0px 0px 0px;}
+    53%   {color: var(--principal); text-shadow: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+    54%   {color: black; text-shadow: black 0px 0px 0px, 0px 0px 0px;}
+    56%   {color: var(--principal); text-shadow: var(--principal)00 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+    75%   {color: var(--principal); text-shadow: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+
+    97%   {color: var(--principal); text-shadow: var(--principal) 0px 0px 100px, 0px 0px 30px, 0px 0px 10px;}
+    99%  {color: black; text-shadow: black 0px 0px 0px, 0px 0px 0px;}
+}
+h2
+{
+    font-family: conthrax, sans-serif;
+    font-size:65px;
+    text-align: center;
+    color: var(--principal-midark);
+    text-shadow:var(--principal) 0px 0px 75px, 0px 0px 30px, 0px 0px 7px;
+    animation-name: light-smooth;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes light-smooth
+{
+    0%   {color: var(--principal-midark); text-shadow: var(--principal);}
+
+    50%   {color: var(--principal-midark); text-shadow: var(--principal-midark) 0px 0px 75px, 0px 0px 30px, 0px 0px 7.5px}
+
+    100%  {color: var(--principal-midark); text-shadow: var(--principal);}
+}
+h4
+{
+    font-family: destrod, sans-serif;
+    font-size:30px;
+    text-align: start;
+    color: var(--principal-midark);
+    text-shadow:var(--principal) 0px 0px 100px, 0px 0px 5px;
+    margin: 7px;
+}
+h5
+{
+    font-family: destrod, sans-serif;
+    font-size:30px;
+    text-align: center;
+    color: var(--principal-alpha);
+    text-shadow: var(--principal-alpha) 0px 0px 100px, 0px 0px 5px, 0px 0px 3px;
+    margin: 7px;
+}
+h6
+{
+    font-family: destrod, sans-serif;
+    font-size:20px;
+    text-align: justify;
+    color: var(--principal-mialpha);
+    text-shadow: var(--principal-alpha) 0px 0px 100px, 0px 0px 5px, 0px 0px 2px;
+    margin: 7px;
+}
+
+/* Police */
+@font-face 
+{
+    font-family: 'conthrax';
+    src: url(./font/conthrax.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face 
+{
+    font-family: 'destrod';
+    src: url(./font/destrod.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Classes */
+.charBinary
+{
+    color: #ffffff00;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition: left 2s, top 2s, color 0.5s;
+}
