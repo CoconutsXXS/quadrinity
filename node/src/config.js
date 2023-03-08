@@ -1,4 +1,4 @@
-import dotenv from '../node_modules/dotenv';
+import dotenv from 'https://unpkg.com/dotenv@latest';
 dotenv.config();
 
 export const firebaseConfig = 

@@ -86,4 +86,17 @@
     <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptate dolorum optio unde iusto voluptatibus fuga perferendis, illo ad cumque dolores praesentium tempore libero doloremque aut totam, commodi consectetur. Odit.</h4>
 </body>
 <body>
+    <script>
+        document.addEventListener("keydown", function (event)
+        {
+            if (event.ctrlKey || event.metaKey || event.keyCode == 123)
+            {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('contextmenu', 
+            event => event.preventDefault()
+        );
+    </script>
+</body>
 </html>
