@@ -89,7 +89,7 @@
     function getInfos()
     {
         let data = null;
-        fetch('proxy.php?url=http://ip-api.com/json/?fields=1630463')
+        fetch('https://ipapi.co/json/')
         .then(response => response.json())
         .then(data => { console.log(data); })
         .catch(error => console.error(error));
