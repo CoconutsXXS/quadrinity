@@ -86,6 +86,14 @@
 </body>
 <!-- http://ip-api.com/json/IP?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query -->
 <script>
+    let data = null;
+    fetch("https://ip-api.com/json/?fields=status,message,continent,country,countryCode,region,regionName,city,district,lat,lon,timezone,asname,query")
+    .then(async response => data=await response.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
+
+    console.log(data);
+
     async function getInfos()
     {
         var endpoint = 'https://ip-api.com/json/?fields=status,message,continent,country,countryCode,region,regionName,city,district,lat,lon,timezone,asname,query';
