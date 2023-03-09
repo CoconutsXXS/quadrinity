@@ -87,7 +87,19 @@
 <!-- http://ip-api.com/json/IP?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query -->
 <script>
     var infos = null;
-    fetch("https://api.ipify.org?format=json")
+    const headers = new Headers
+    ({
+        'Access-Control-Allow-Origin': 'https://coconutsxxs.github.io/quadrinity/',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'Content-Type'
+    });
+
+    fetch('https://api.ipify.org/?format=json',
+    {
+        method: 'GET',
+        mode: 'cors',
+        headers: headers
+    })
     .then(async response => infos = await response)
     .then(async data => infos = await data)
     .catch(err => console.error(err))
