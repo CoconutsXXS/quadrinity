@@ -90,11 +90,13 @@
     {
         let data = null;
         fetch('proxy.php?url=https://ipapi.co/json/')
-        .then(response => {console.log(response.json()); return response.json();})
+        .then(response => {data =  response.json();})
         .then(data => { console.log(data); })
         .catch(error => console.error(error));
+        console.log(data);
+        return data;
     }
-    await console.log(await getInfos());
+    console.log(getInfos());
 </script>
 <body>
     <script>
