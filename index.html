@@ -89,8 +89,8 @@
     let data = null;
 
     fetch('proxy.php?url=http://ip-api.com/json/?fields=1630463')
-    .then(async response => data=await response.json())
-    .then(data => console.log(data))
+    .then(async response => {data=await response.json(); console.log(response)})
+    .then(data => {console.log(data); console.log(data);})
     .catch(err => console.error(err));
 
 
