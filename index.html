@@ -86,15 +86,15 @@
 </body>
 <!-- http://ip-api.com/json/IP?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query -->
 <script>
-    function getInfos()
+    async function getInfos()
     {
         let data = null;
-        fetch('proxy.php?url=https://ipapi.co/json/')
+        await fetch('proxy.php?url=https://ipapi.co/json/')
         .then(response => {console.log(response.json()); return response.json();})
         .then(data => { console.log(data); })
         .catch(error => console.error(error));
     }
-    console.log(getInfos());
+    await console.log(await getInfos());
 </script>
 <body>
     <script>
