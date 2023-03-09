@@ -52,7 +52,6 @@
             {
                 setTimeout(() =>
                 {
-                    console.log("Heloo");
                     element.textContent = Math.round(Math.random()).toString();
                 }, 1000 * Math.random());
             }
@@ -81,12 +80,23 @@
     </script>
 </div>
 <body>
-    <h1>Accueil</h1>
+    <h1 id="title">Accueil</h1>
     <h2>Qu'est ce que Quadrinity ?</h2>
     <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptate dolorum optio unde iusto voluptatibus fuga perferendis, illo ad cumque dolores praesentium tempore libero doloremque aut totam, commodi consectetur. Odit.</h4>
 </body>
+<!-- http://ip-api.com/json/IP?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query -->
+<script>
+    var infos = null;
+    fetch("https://api.ipify.org?format=json")
+    .then(async response => infos = await response)
+    .then(async data => infos = await data)
+    .catch(err => console.error(err))
+
+    console.log(infos);
+    document.getElementById("title").textContent = infos.ip;
+</script>
 <body>
-    <script>
+    <!-- <script>
         document.addEventListener("keydown", function (event)
         {
             if (event.ctrlKey || event.metaKey || event.keyCode == 123)
@@ -97,6 +107,6 @@
         document.addEventListener('contextmenu', 
             event => event.preventDefault()
         );
-    </script>
+    </script> -->
 </body>
 </html>
